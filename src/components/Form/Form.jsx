@@ -52,7 +52,8 @@ const Form = () => {
     }
 
     const onScooterScannerClick = (e) => {
-        ShowScanQR()
+        country = "!!!!";
+		ShowScanQR();
     }
 
     return (
