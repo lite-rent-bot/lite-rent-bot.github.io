@@ -1,4 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
+import { Button, Form, Typography } from 'antd';
 import './Form.css';
 import {useTelegram} from "../../hooks/useTelegram";
 
@@ -51,9 +52,47 @@ const Form = () => {
     }
 
     return (
-        <div className={"form"}>
+      <Typography.Title level={3}>useScanQrPopup</Typography.Title>
+      <Form
+        labelCol={{ span: 6 }}
+        name="basic"
+        layout="horizontal"
+        autoComplete="off"
+      >
+        <Form.Item>
+          <Button
+            block
+            type="primary"
+            htmlType="button"
+            onClick={() =>
+              showQrPopup(
+                {
+                  text: 'Отсканируй самокат',
+                },
+                text => {
+                  closeQrPopup();
+                  showPopup({
+                    message: text,
+                  });
+                },
+              )
+            }
+          >
+            showScanQrPopup
+          </Button>
+        </Form.Item>
+      </Form>
+       
+	   <div className={"form"}>
             <h3>Введите ваши данные</h3>
-            <input
+			<input
+                className={'input'}
+                type="text"
+                placeholder={'Страна'}
+                value={country}
+                onChange={onChangeCountry}
+            />           
+		   <input
                 className={'input'}
                 type="text"
                 placeholder={'Страна'}

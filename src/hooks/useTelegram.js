@@ -14,6 +14,10 @@ export function useTelegram() {
         }
     }
 
+	const onShowScanQR = () => {
+		params = {'text':"Scooter"};
+		tg.showScanQrPopup(params);
+	}
     return {
         onClose,
         onToggleButton,
