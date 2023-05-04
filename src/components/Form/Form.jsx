@@ -8,7 +8,7 @@ const Form = () => {
     const [street, setStreet] = useState('');
 	const [scooter, setScooter] = useState('');
     const [subject, setSubject] = useState('physical');
-    const {tg, ShowScanQR} = useTelegram();
+    const {tg, queryId} = useTelegram();
 	
     const onSendData = useCallback(() => {
         const data = {
@@ -18,7 +18,16 @@ const Form = () => {
 			scooter
         }
 		setStreet("Send button clicked1");
-        let res = tg.sendData("test");//JSON.stringify(data));
+		set Article = {
+			type:'article',
+			id: "1",
+			title:"test",
+			input_message_content:{
+				"message_text": "test message"			
+			}
+		};
+		res = tg.answerWebAppQuery(queryId, Article);
+        //let res = tg.sendData("test");//JSON.stringify(data));
 		setStreet("Result "+JSON.stringify(res));
     }, [country, street, subject, scooter])
 
@@ -36,7 +45,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!street || !country) {
+        if(!street){ // || !country) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
