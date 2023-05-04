@@ -18,7 +18,7 @@ const Form = () => {
 			scooter
         }
 		setStreet("Send button clicked1");
-		set Article = {
+		let Article = {
 			type:'article',
 			id: "1",
 			title:"test",
