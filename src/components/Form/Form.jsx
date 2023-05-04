@@ -27,7 +27,12 @@ const Form = () => {
 			}
 		};
 		setStreet("Send button clicked2");
-		res = tg.answerWebAppQuery(queryId, JSON.stringify(Article));
+		try {
+			tg.answerWebAppQuery(queryId, JSON.stringify(Article));
+			let res = "ok";
+		} catch (err) {
+			let res = err;
+		};
         //let res = tg.sendData("test");//JSON.stringify(data));
 		setStreet("Result "+JSON.stringify(res));
     }, [country, street, subject, scooter])
