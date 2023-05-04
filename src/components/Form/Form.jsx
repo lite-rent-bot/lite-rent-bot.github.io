@@ -40,7 +40,7 @@ const Form = () => {
     }, [country, street])
 
     const onChangeCountry = (e) => {
-		console.log("Country was chenged");	
+		console.log("Country was changed");	
 		setCountry(e.target.value);
     }
 
@@ -52,7 +52,7 @@ const Form = () => {
         setSubject(e.target.value)
     }
 
-    const onScooterScannerClick = (e) => {
+    const onScooterScannerClick = () => {
 		console.log("Scanner button was clicked!");
 		ShowScanQR();
 	}
@@ -60,7 +60,7 @@ const Form = () => {
     return (
 	   <div className={"form"}>
             <h3>Отсканируй номер самоката</h3>
-			<Button onClick={() =>onScooterScannerClick}>Scan scooter</Button>
+			<Button onClick={onScooterScannerClick}>Scan scooter</Button>
 		   <input
                 className={'input'}
                 type="text"
