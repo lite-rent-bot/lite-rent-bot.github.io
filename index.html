@@ -11,5 +11,11 @@
   </head>
   <body>
     <div id="root"></div>
+	   <p id="scooter"> Scooter</p> <!--Просто текст для проверки-->
   </body>
+  <script>
+   let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+  document.getElementById("scooter").innerHTML  = tg.version;
+ 
+</script>
 </html>
