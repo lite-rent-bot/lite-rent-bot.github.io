@@ -4,7 +4,6 @@ import Button from "../Button/Button";
 import {useTelegram} from "../../hooks/useTelegram";
 import {
   useScanQrPopup,
-  useShowPopup,
 } from './useScanQrPopup.ts';
 
 const Form = () => {
@@ -14,7 +13,6 @@ const Form = () => {
     const {tg,ShowScanQR} = useTelegram();
 
 	const [showQrPopup, closeQrPopup] = useScanQrPopup();
-	const showPopup = useShowPopup();
 	
     const onSendData = useCallback(() => {
         const data = {
@@ -73,10 +71,7 @@ const Form = () => {
                 },
                 text => {
                   closeQrPopup();
-                  showPopup({
-                    message: text,
-                  });
-                },
+                 },
               )				
 			}>Scan scooter</Button>
 		   <input
