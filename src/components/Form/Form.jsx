@@ -50,38 +50,12 @@ const Form = () => {
     const onChangeSubject = (e) => {
         setSubject(e.target.value)
     }
+	const onButtonClicked = () {
+		alert('You clicked me!');
+}
 
     return (
-      <Typography.Title level={3}>useScanQrPopup</Typography.Title>
-      <Form
-        labelCol={{ span: 6 }}
-        name="basic"
-        layout="horizontal"
-        autoComplete="off"
-      >
-        <Form.Item>
-          <Button
-            block
-            type="primary"
-            htmlType="button"
-            onClick={() =>
-              showQrPopup(
-                {
-                  text: 'Отсканируй самокат',
-                },
-                text => {
-                  closeQrPopup();
-                  showPopup({
-                    message: text,
-                  });
-                },
-              )
-            }
-          >
-            showScanQrPopup
-          </Button>
-        </Form.Item>
-      </Form>
+		<button onClick={onButtonClicked}>Default</button>;
        
 	   <div className={"form"}>
             <h3>Введите ваши данные</h3>
