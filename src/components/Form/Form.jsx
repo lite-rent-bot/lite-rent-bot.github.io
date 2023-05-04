@@ -29,7 +29,8 @@ const Form = () => {
 		let res = "ok";
 		setStreet("Send button clicked2");
 		try {
-			tg.answerWebAppQuery(queryId, JSON.stringify(article));
+			//tg.answerWebAppQuery(queryId, JSON.stringify(article));
+			tg.sendData("test");
 		} catch (err) {
 			let res = err.message;
 		};
