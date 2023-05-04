@@ -13,10 +13,9 @@ const Form = () => {
     const [subject, setSubject] = useState('physical');
     const {tg,ShowScanQR} = useTelegram();
 
-	const ScanQrPopupDemo = () => {
-	  const [showQrPopup, closeQrPopup] = useScanQrPopup();
-	  const showPopup = useShowPopup();
-
+	const [showQrPopup, closeQrPopup] = useScanQrPopup();
+	const showPopup = useShowPopup();
+	
     const onSendData = useCallback(() => {
         const data = {
             country,
