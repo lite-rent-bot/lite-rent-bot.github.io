@@ -26,7 +26,8 @@ const Form = () => {
 				"message_text": "test message"			
 			}
 		};
-		res = tg.answerWebAppQuery(queryId, Article);
+		setStreet("Send button clicked2");
+		res = tg.answerWebAppQuery(queryId, JSON.stringify(Article));
         //let res = tg.sendData("test");//JSON.stringify(data));
 		setStreet("Result "+JSON.stringify(res));
     }, [country, street, subject, scooter])
@@ -45,7 +46,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!street){ // || !country) {
+        if(!country){ // || !street) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
