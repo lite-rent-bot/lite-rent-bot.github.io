@@ -56,6 +56,7 @@ const Form = () => {
 
     const onQRScanned = (tg_event) => {
 		setScooter(tg_event);
+		setCountry(tg_event);
 		//console.log("Event ");	
 		//console.log("Event "+tg_event);	
 		return true;		
