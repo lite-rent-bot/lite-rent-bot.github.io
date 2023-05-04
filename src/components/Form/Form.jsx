@@ -18,7 +18,7 @@ const Form = () => {
 			scooter
         }
 		setStreet("Send button clicked");
-        tg.sendData(JSON.stringify(data));
+        tg.sendData(scooter);//JSON.stringify(data));
     }, [country, street, subject, scooter])
 
     useEffect(() => {
