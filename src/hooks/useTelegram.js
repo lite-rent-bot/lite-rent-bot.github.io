@@ -23,6 +23,7 @@ export function useTelegram() {
     return {
         onClose,
         onToggleButton,
+		ShowScanQR,
         tg,
         version: tg.version,		
         user: tg.initDataUnsafe?.user,
