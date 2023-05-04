@@ -7,7 +7,7 @@ const Form = () => {
     const [country, setCountry] = useState('');
     const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
-    const {tg,ShowScanQR} = useTelegram();
+    const {tg, ShowScanQR} = useTelegram();
 	
     const onSendData = useCallback(() => {
         const data = {
@@ -59,16 +59,7 @@ const Form = () => {
     return (
 	   <div className={"form"}>
             <h3>Отсканируй номер самоката</h3>
-			<Button onClick={() =>
-              showQrPopup(
-                {
-                  text: 'Привет друг',
-                },
-                text => {
-                  closeQrPopup();
-                 },
-              )				
-			}>Scan scooter</Button>
+			<Button onClick={() =>onScooterScannerClick}>Scan scooter</Button>
 		   <input
                 className={'input'}
                 type="text"
