@@ -6,6 +6,7 @@ import {useTelegram} from "../../hooks/useTelegram";
 const Form = () => {
     const [country, setCountry] = useState('');
     const [street, setStreet] = useState('');
+	const [scooter, setScooter] = useState('');
     const [subject, setSubject] = useState('physical');
     const {tg, ShowScanQR} = useTelegram();
 	
@@ -13,10 +14,11 @@ const Form = () => {
         const data = {
             country,
             street,
-            subject
+            subject, 
+			scooter
         }
         tg.sendData(JSON.stringify(data));
-    }, [country, street, subject])
+    }, [country, street, subject, scooter])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -53,6 +55,7 @@ const Form = () => {
     }
 
     const onQRScanned = (tg_event) => {
+		setScooter(e.target.value);
 		//console.log("Event ");	
 		//console.log("Event "+tg_event);	
 		return true;		
