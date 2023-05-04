@@ -52,7 +52,7 @@ const Form = () => {
     }
 
     const onScooterScannerClick = (e) => {
-		alert('Хватит кликать!');
+		//alert('Хватит кликать!');
 		ShowScanQR();
 	}
 
