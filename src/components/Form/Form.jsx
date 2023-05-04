@@ -2,17 +2,12 @@ import React, {useCallback, useEffect, useState} from 'react';
 import './Form.css';
 import Button from "../Button/Button";
 import {useTelegram} from "../../hooks/useTelegram";
-import {
-  useScanQrPopup
-} from './useScanQrPopup.jsx';
 
 const Form = () => {
     const [country, setCountry] = useState('');
     const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
     const {tg,ShowScanQR} = useTelegram();
-
-	const [showQrPopup, closeQrPopup] = useScanQrPopup();
 	
     const onSendData = useCallback(() => {
         const data = {
@@ -57,9 +52,9 @@ const Form = () => {
     }
 
     const onScooterScannerClick = (e) => {
-        //country = "!!!!";
+		alert('Хватит кликать!');
 		ShowScanQR();
-    }
+	}
 
     return (
 	   <div className={"form"}>
