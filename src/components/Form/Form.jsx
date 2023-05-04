@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import {useTelegram} from "../../hooks/useTelegram";
 import {
   useScanQrPopup
-} from './useScanQrPopup.ts';
+} from './useScanQrPopup.jsx';
 
 const Form = () => {
     const [country, setCountry] = useState('');
