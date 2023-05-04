@@ -31,10 +31,10 @@ const Form = () => {
 			tg.answerWebAppQuery(queryId, JSON.stringify(Article));
 			let res = "ok";
 		} catch (err) {
-			let res = err;
+			let res = err.message;
 		};
         //let res = tg.sendData("test");//JSON.stringify(data));
-		setStreet("Result "+JSON.stringify(res));
+		setStreet("Result "+res);
     }, [country, street, subject, scooter])
 
     useEffect(() => {
