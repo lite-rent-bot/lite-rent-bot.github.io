@@ -40,7 +40,7 @@ const Form = () => {
     }, [country, street])
 
     const onChangeCountry = (e) => {
-		console.log("Country was changed");	
+		//console.log("Country was changed");	
 		setCountry(e.target.value);
     }
 
@@ -52,10 +52,18 @@ const Form = () => {
         setSubject(e.target.value)
     }
 
+    const onQRScanned = (tg_event) => {
+		//console.log("Event ");	
+		//console.log("Event "+tg_event);	
+		return true;		
+	}
+	
     const onScooterScannerClick = () => {
 		console.log("Scanner button was clicked!");
-		ShowScanQR();
+		//ShowScanQR();
+		tg.showScanQrPopup({text: 'Отсканируй самокат'}, onQRScanned);
 	}
+
 
     return (
 	   <div className={"form"}>
