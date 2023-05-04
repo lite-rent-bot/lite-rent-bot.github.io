@@ -51,10 +51,9 @@ const Form = () => {
     }
 
     return (
-		 <Button onClick={ShowScanQR}>Scanner</Button>
-       
 	   <div className={"form"}>
             <h3>Введите ваши данные</h3>
+			 <Button onClick={ShowScanQR}>Scanner</Button>
 			<input
                 className={'input'}
                 type="text"
