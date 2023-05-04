@@ -4,7 +4,8 @@ import Button from "../Button/Button";
 import {useTelegram} from "../../hooks/useTelegram";
 import {
   useScanQrPopup,
-} from './useScanQrPopup.ts';
+  useShowPopup,
+} from '@vkruglikov/react-telegram-web-app';
 
 const Form = () => {
     const [country, setCountry] = useState('');
