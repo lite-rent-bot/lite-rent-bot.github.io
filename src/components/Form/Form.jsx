@@ -40,7 +40,8 @@ const Form = () => {
     }, [country, street])
 
     const onChangeCountry = (e) => {
-        setCountry(e.target.value)
+		console.log("Country was chenged");	
+		setCountry(e.target.value);
     }
 
     const onChangeStreet = (e) => {
@@ -52,7 +53,7 @@ const Form = () => {
     }
 
     const onScooterScannerClick = (e) => {
-		//alert('Хватит кликать!');
+		console.log("Scanner button was clicked!");
 		ShowScanQR();
 	}
 
