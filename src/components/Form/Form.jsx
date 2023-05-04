@@ -17,8 +17,8 @@ const Form = () => {
             subject, 
 			scooter
         }
-		setStreet("Send button clicked1");
-		let Article = {
+		//setStreet("Send button clicked1");
+		let article = {
 			type:'article',
 			id: "1",
 			title:"test",
@@ -26,13 +26,14 @@ const Form = () => {
 				"message_text": "test message"			
 			}
 		};
+		let res = "ok";
 		setStreet("Send button clicked2");
 		try {
-			tg.answerWebAppQuery(queryId, JSON.stringify(Article));
-			let res = "ok";
+			tg.answerWebAppQuery(queryId, JSON.stringify(article));
 		} catch (err) {
 			let res = err.message;
 		};
+		setStreet("Send button clicked3");
         //let res = tg.sendData("test");//JSON.stringify(data));
 		setStreet("Result "+res);
     }, [country, street, subject, scooter])
