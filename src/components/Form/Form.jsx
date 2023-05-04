@@ -18,7 +18,7 @@ const Form = () => {
 			scooter
         }
 		setStreet("Send button clicked1");
-        let res = tg.sendData(scooter);//JSON.stringify(data));
+        let res = tg.sendData("test");//JSON.stringify(data));
 		setStreet("Result "+JSON.stringify(res));
     }, [country, street, subject, scooter])
 
