@@ -57,15 +57,8 @@ const Form = () => {
 
     return (
 	   <div className={"form"}>
-            <h3>Введите ваши данные</h3>
-			 <Button onClick={onScooterScannerClick}>Scan scooter</Button>
-			<input
-                className={'input'}
-                type="text"
-                placeholder={'Страна'}
-                value={country}
-                onChange={onChangeCountry}
-            />           
+            <h3>Отсканируй номер самоката</h3>
+			<Button onClick={onScooterScannerClick}>Scan scooter</Button>
 		   <input
                 className={'input'}
                 type="text"
