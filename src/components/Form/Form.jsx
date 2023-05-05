@@ -41,9 +41,9 @@ const Form = () => {
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
-        return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
-        }
+        //return () => {
+        //    tg.offEvent('mainButtonClicked', onSendData)
+        //}
     }, [onSendData])
 
     useEffect(() => {
@@ -80,6 +80,9 @@ const Form = () => {
 		//console.log("Event "+tg_event);	
 		return true;		
 	}
+	const onSendBtnClick = () => {
+		tg.sendData("test");
+	}
 	
     const onScooterScannerClick = () => {
 		console.log("Scanner button was clicked!");
@@ -106,6 +109,7 @@ const Form = () => {
                 value={street}
                 onChange={onChangeStreet}
             />
+			<Button onClick={onSendBtnClick}>Отправить</Button>
             <select value={subject} onChange={onChangeSubject} className={'select'}>
                 <option value={'physical'}>Физ. лицо</option>
                 <option value={'legal'}>Юр. лицо</option>
