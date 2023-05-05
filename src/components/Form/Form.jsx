@@ -82,7 +82,7 @@ const Form = () => {
 	}
 	const onSendBtnClick = () => {
 		console.log("Click before");
-		res = tg.sendData("test");
+		let res = tg.sendData("test");
 		console.log("Click after: "+res);
 	}
 	
