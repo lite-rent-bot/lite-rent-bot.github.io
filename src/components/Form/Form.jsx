@@ -81,8 +81,17 @@ const Form = () => {
 		return true;		
 	}
 	const onSendBtnClick = () => {
-		console.log("Click before");
-		let res = tg.sendData("test");
+		//let res = tg.sendData("test");
+		let article = {
+			type:'article',
+			id: "1",
+			title:"test",
+			input_message_content:{
+				"message_text": "test message"			
+			}
+		};		
+		console.log("Click before "+queryId+":"+JSON.stringify(article));
+		let res = tg.answerWebAppQuery(queryId, JSON.stringify(article));
 		console.log("Click after: "+res);
 	}
 	
