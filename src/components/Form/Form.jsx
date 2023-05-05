@@ -92,12 +92,12 @@ const Form = () => {
 		};		
 		console.log("Click before "+queryId+":"+JSON.stringify(article));
 		try {
-			window.Telegram.WebApp.sendData.answerWebAppQuery(queryId, JSON.stringify(article));
+			window.Telegram.WebApp.answerWebAppQuery(queryId, JSON.stringify(article));
 		} catch (err) {
 			console.log("err: "+JSON.stringify(err));
 		}
 		console.log("Click mid");
-		window.Telegram.WebApp.sendData.sendData("test");
+		window.Telegram.WebApp.sendData("test");
 		console.log("Click after");
 	}
 	
