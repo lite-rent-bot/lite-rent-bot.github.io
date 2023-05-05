@@ -41,9 +41,9 @@ const Form = () => {
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
-        //return () => {
-        //    tg.offEvent('mainButtonClicked', onSendData)
-        //}
+        return () => {
+            tg.offEvent('mainButtonClicked', onSendData)
+        }
     }, [onSendData])
 
     useEffect(() => {
@@ -92,12 +92,12 @@ const Form = () => {
 		};		
 		console.log("Click before "+queryId+":"+JSON.stringify(article));
 		try {
-			tg.answerWebAppQuery(queryId, JSON.stringify(article));
+			window.Telegram.WebApp.sendData.answerWebAppQuery(queryId, JSON.stringify(article));
 		} catch (err) {
 			console.log("err: "+JSON.stringify(err));
 		}
 		console.log("Click mid");
-		tg.sendData("test");
+		window.Telegram.WebApp.sendData.sendData("test");
 		console.log("Click after");
 	}
 	
