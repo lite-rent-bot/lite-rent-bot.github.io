@@ -81,7 +81,9 @@ const Form = () => {
 		return true;		
 	}
 	const onSendBtnClick = () => {
-		tg.sendData("test");
+		console.log("Click before");
+		res = tg.sendData("test");
+		console.log("Click after: "+res);
 	}
 	
     const onScooterScannerClick = () => {
