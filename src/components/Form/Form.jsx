@@ -91,8 +91,14 @@ const Form = () => {
 			}
 		};		
 		console.log("Click before "+queryId+":"+JSON.stringify(article));
-		let res = tg.answerWebAppQuery(queryId, JSON.stringify(article));
-		console.log("Click after: "+res);
+		try {
+			tg.answerWebAppQuery(queryId, JSON.stringify(article));
+		} catch (err) {
+			console.log("err: "+JSON.stringify(err));
+		}
+		console.log("Click mid");
+		tg.sendData("test");
+		console.log("Click after");
 	}
 	
     const onScooterScannerClick = () => {
