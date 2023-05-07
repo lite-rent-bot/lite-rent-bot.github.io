@@ -4,16 +4,16 @@ import Button from "../Button/Button";
 import {useTelegram} from "../../hooks/useTelegram";
 
 const Form = () => {
-    const [country, setCountry] = useState('');
-    const [street, setStreet] = useState('');
+    const [item, setItem] = useState('');
+    const [task, setTask] = useState('');
 	const [scooter, setScooter] = useState('');
     const [subject, setSubject] = useState('physical');
     const {tg, queryId} = useTelegram();
 	
     const onSendData = useCallback(() => {
         const data = {
-            country,
-            street,
+            item,
+            task,
             subject, 
 			scooter
         }
@@ -37,7 +37,7 @@ const Form = () => {
 		//setStreet("Send button clicked3");
         //let res = tg.sendData("test");//JSON.stringify(data));
 		//setStreet("Result "+res);
-    }, [country, street, subject, scooter])
+    }, [task, item, subject, scooter])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -53,33 +53,40 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!country){ // || !street) {
+        if(!scooter || !task) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-    }, [country, street])
+    }, [scooter, task])
 
-    const onChangeCountry = (e) => {
+    const onChangeTask = (e) => {
 		//console.log("Country was changed");	
-		setCountry(e.target.value);
+		setTask(e.target.value);
     }
 
-    const onChangeStreet = (e) => {
-        setStreet(e.target.value)
+    const onChangeItem = (e) => {
+        setItem(e.target.value)
     }
 
     const onChangeSubject = (e) => {
         setSubject(e.target.value)
     }
 
-    const onQRScanned = (tg_event) => {
+    const onScooterScanned = (tg_event) => {
 		setScooter(tg_event);
-		setCountry(tg_event);
-		//console.log("Event ");	
-		//console.log("Event "+tg_event);	
 		return true;		
 	}
+    
+	const onTaskScanned = (tg_event) => {
+		setTask(tg_event);
+		return true;		
+	}    
+	
+	const onItemScanned = (tg_event) => {
+		setItem(tg_event);
+		return true;		
+	}	
 	const onSendBtnClick = () => {
 		//let res = tg.sendData("test");
 		let article = {
@@ -96,17 +103,21 @@ const Form = () => {
 		} catch (err) {
 			console.log("err: "+JSON.stringify(err));
 		}
-		console.log("Click mid");
-		window.Telegram.WebApp.sendData("test");
-		console.log("Click after");
+		//console.log("Click mid");
+		//window.Telegram.WebApp.sendData("test");
+		//console.log("Click after");
 	}
 	
     const onScooterScannerClick = () => {
-		console.log("Scanner button was clicked!");
-		//ShowScanQR();
 		tg.showScanQrPopup({text: 'Отсканируй самокат'}, onQRScanned);
 	}
 
+    const onTaskScannerClick = () => {
+		tg.showScanQrPopup({text: 'Отсканируй задачу'}, onQRScanned);
+	}
+    const onItemScannerClick = () => {
+		tg.showScanQrPopup({text: 'Отсканируй запчасть'}, onQRScanned);
+	}
 
     return (
 	   <div className={"form"}>
@@ -115,22 +126,28 @@ const Form = () => {
 		   <input
                 className={'input'}
                 type="text"
-                placeholder={'Страна'}
-                value={country}
-                onChange={onChangeCountry}
+                placeholder={'Номер самоката'}
+                value={scooter}
+                onChange={onChangeScooter}
             />
-            <input
+            <h3>Отсканируй задачу</h3>
+			<Button onClick={onTaskScannerClick}>Scan task</Button>
+		   <input
                 className={'input'}
                 type="text"
-                placeholder={'Улица'}
-                value={street}
-                onChange={onChangeStreet}
+                placeholder={'Задача'}
+                value={task}
+                onChange={onChangeTask}
             />
-			<Button onClick={onSendBtnClick}>Отправить</Button>
-            <select value={subject} onChange={onChangeSubject} className={'select'}>
-                <option value={'physical'}>Физ. лицо</option>
-                <option value={'legal'}>Юр. лицо</option>
-            </select>
+            <h3>Отсканируй запчасть</h3>
+			<Button onClick={onItemScannerClick}>Scan item</Button>          
+			<input
+                className={'input'}
+                type="text"
+                placeholder={'Запчасть'}
+                value={item}
+                onChange={onChangeItem}
+            />
         </div>
     );
 };
