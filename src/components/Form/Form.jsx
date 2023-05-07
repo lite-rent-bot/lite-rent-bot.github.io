@@ -70,7 +70,7 @@ const Form = () => {
     }
 	
 	const onChangeScooter = (e) => {
-		setItem(e.target.value)
+		setScooter(e.target.value)
 	}
 
     const onChangeSubject = (e) => {
