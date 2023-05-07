@@ -113,14 +113,14 @@ const Form = () => {
 	}
 	
     const onScooterScannerClick = () => {
-		tg.showScanQrPopup({text: 'Отсканируй самокат'}, onQRScanned);
+		tg.showScanQrPopup({text: 'Отсканируй самокат'}, onScooterScanned);
 	}
 
     const onTaskScannerClick = () => {
-		tg.showScanQrPopup({text: 'Отсканируй задачу'}, onQRScanned);
+		tg.showScanQrPopup({text: 'Отсканируй задачу'}, onTaskScanned);
 	}
     const onItemScannerClick = () => {
-		tg.showScanQrPopup({text: 'Отсканируй запчасть'}, onQRScanned);
+		tg.showScanQrPopup({text: 'Отсканируй запчасть'}, onItemScanned);
 	}
 
     return (
