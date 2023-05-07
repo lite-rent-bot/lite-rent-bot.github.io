@@ -27,16 +27,16 @@ const Form = () => {
 			}
 		};
 		let res = "ok";
-		setStreet("Send button clicked2");
+		//setStreet("Send button clicked2");
 		try {
 			//tg.answerWebAppQuery(queryId, JSON.stringify(article));
-			tg.sendData("test");
+			tg.sendData(JSON.stringify(data));
 		} catch (err) {
 			let res = err.message;
 		};
-		setStreet("Send button clicked3");
+		//setStreet("Send button clicked3");
         //let res = tg.sendData("test");//JSON.stringify(data));
-		setStreet("Result "+res);
+		//setStreet("Result "+res);
     }, [country, street, subject, scooter])
 
     useEffect(() => {
