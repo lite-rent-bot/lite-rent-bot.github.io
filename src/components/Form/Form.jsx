@@ -64,10 +64,6 @@ const Form = () => {
 	
 	const onChangeScooter = (e) => {
 		console.log("scanned:"+e.target.value);
-		//let num = e.target.value.slice(-4);
-		//console.log("num:"+num);
-		//setScooter((prevScArray) => [...prevScArray, num])
-		//console.log("scooter:"+JSON.stringify(scooter));
 	}
 
     const onChangeSubject = (e) => {
@@ -75,6 +71,17 @@ const Form = () => {
     }
 
     const onScooterScanned = (tg_event) => {
+		let num = tg_event.slice(-4);
+		const digits_only = string => [...string].every(c => '0123456789'.includes(c));
+		if (digits_only(num)){
+			console.log("digits only: true");
+			//console.log("num:"+num);
+			setScooter((prevScArray) => [...prevScArray, num])
+			//console.log("scooter:"+JSON.stringify(scooter));
+		} else {
+			console.log("digits only: false");
+		}
+		
 		setScooter(tg_event);
 		return true;		
 	}
