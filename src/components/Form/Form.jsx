@@ -63,7 +63,11 @@ const Form = () => {
     }
 	
 	const onChangeScooter = (e) => {
-		setScooter((prevScArray) => [...prevScArray, e.target.value])
+		console.log("scanned:"+e.target.value);
+		let num = e.target.value.slice(-4);
+		console.log("num:"+num);
+		setScooter((prevScArray) => [...prevScArray, num])
+		console.log("scooter:"+JSON.stringify(scooter));
 	}
 
     const onChangeSubject = (e) => {
