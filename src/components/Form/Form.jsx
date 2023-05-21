@@ -83,7 +83,7 @@ const Form = () => {
 			setScooter("ошибка");
 		}		
 		//setScooter(num);
-		SetTest("length: "+scooter.length+", item: "+item);
+		setTest("length: "+scooter.length+", item: "+item);
 		if (scooter.length==item) {	return true};		
 	}
  	
