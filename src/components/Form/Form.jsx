@@ -109,6 +109,7 @@ const Form = () => {
 	}
 
     return (
+	<script> console.log('hello')</script>
 	   <div className={"form"}>
             <h3>Сколько самокатов по документам?</h3>
 		   <input
