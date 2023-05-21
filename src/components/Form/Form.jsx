@@ -5,7 +5,7 @@ import {useTelegram} from "../../hooks/useTelegram";
 
 const Form = () => {
     const [item, setItem] = useState('');
-	 const [test, setTest] = useState('');
+	const [test, setTest] = useState('');
 	const [scooter, setScooter] = useState([]);
     const [subject, setSubject] = useState('physical');
     const {tg, queryId} = useTelegram();
@@ -84,7 +84,7 @@ const Form = () => {
 		}		
 		//setScooter(num);
 		SetTest("length: "+scooter.length+", item: "+item);
-		if (scooter.length.String==item) {	return true};		
+		if (scooter.length==item) {	return true};		
 	}
  	
 	const onItemScanned = (tg_event) => {
