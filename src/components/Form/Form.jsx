@@ -131,7 +131,7 @@ const Form = () => {
                 className={'input'}
                 type="text"
                 placeholder={'Номера самокатов'}
-                value={scooter}
+                value={scooter1}
                 onChange={onChangeScooter}
             />
  		   <input
