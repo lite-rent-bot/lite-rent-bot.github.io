@@ -77,7 +77,7 @@ const Form = () => {
 		//let isnum = /^\d+$/.test(num);
 		if (num.length==4) {
 			//setScooter(num);
-			setScooter((scooter.push(num));			
+			setScooter(scooter.push(num));			
 		} else {
 			//	setScooter(num);
 			//console.log("scooter:"+JSON.stringify(scooter));
