@@ -71,7 +71,7 @@ const Form = () => {
     }
 
     const onScooterScanned = (tg_event) => {
-		let num = tg_event.slice(-5);
+		let num = tg_event.slice(-5).match(/\d+/)[0];
 		let isnum = /^\d+$/.test(num);
 		setScooter(num +":"+isnum);
 		//const digits_only = string => [...string].every(c => '0123456789'.includes(c));
