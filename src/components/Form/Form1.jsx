@@ -5,6 +5,7 @@ import {useTelegram} from "../../hooks/useTelegram";
 
 const Form = () => {
     const [item, setItem] = useState('');
+    const [task, setTask] = useState('');
 	const [scooter, setScooter] = useState('');
     const [subject, setSubject] = useState('physical');
     const {tg, queryId} = useTelegram();
@@ -12,6 +13,7 @@ const Form = () => {
     const onSendData = useCallback(() => {
         const data = {
             item,
+            task,
             subject, 
 			scooter
         }
@@ -35,7 +37,7 @@ const Form = () => {
 		//setStreet("Send button clicked3");
         //let res = tg.sendData("test");//JSON.stringify(data));
 		//setStreet("Result "+res);
-    }, [item, subject, scooter])
+    }, [task, item, subject, scooter])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -51,12 +53,17 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!scooter) {
+        if(!scooter || !task) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-    }, [scooter])
+    }, [scooter, task])
+
+    const onChangeTask = (e) => {
+		//console.log("Country was changed");	
+		setTask(e.target.value);
+    }
 
     const onChangeItem = (e) => {
         setItem(e.target.value)
@@ -118,21 +125,32 @@ const Form = () => {
 
     return (
 	   <div className={"form"}>
-            <h3>Сколько самокатов по документам?</h3>
-		   <input
-                className={'input'}
-                type="text"
-                placeholder={'Номер самоката'}
-                value={item}
-                onChange={onChangeScooter}
-            />
+            <h3>Отсканируй номер самоката</h3>
 			<Button onClick={onScooterScannerClick}>Scan scooter</Button>
- 		   <input
+		   <input
                 className={'input'}
                 type="text"
                 placeholder={'Номер самоката'}
                 value={scooter}
                 onChange={onChangeScooter}
+            />
+            <h3>Отсканируй задачу</h3>
+			<Button onClick={onTaskScannerClick}>Scan task</Button>
+		   <input
+                className={'input'}
+                type="text"
+                placeholder={'Задача'}
+                value={task}
+                onChange={onChangeTask}
+            />
+            <h3>Отсканируй запчасть</h3>
+			<Button onClick={onItemScannerClick}>Scan item</Button>          
+			<input
+                className={'input'}
+                type="text"
+                placeholder={'Запчасть'}
+                value={item}
+                onChange={onChangeItem}
             />
         </div>
     );
