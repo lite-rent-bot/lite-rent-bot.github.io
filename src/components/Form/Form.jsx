@@ -78,12 +78,7 @@ const Form = () => {
 		setScooter(tg_event);
 		return true;		
 	}
-    
-	const onTaskScanned = (tg_event) => {
-		setTask(tg_event);
-		return true;		
-	}    
-	
+ 	
 	const onItemScanned = (tg_event) => {
 		setItem(tg_event);
 		return true;		
@@ -113,13 +108,6 @@ const Form = () => {
 		tg.showScanQrPopup({text: 'Отсканируй самокат'}, onScooterScanned);
 	}
 
-    const onTaskScannerClick = () => {
-		tg.showScanQrPopup({text: 'Отсканируй задачу'}, onTaskScanned);
-	}
-    const onItemScannerClick = () => {
-		tg.showScanQrPopup({text: 'Отсканируй запчасть'}, onItemScanned);
-	}
-
     return (
 	   <div className={"form"}>
             <h3>Сколько самокатов по документам?</h3>
@@ -128,7 +116,7 @@ const Form = () => {
                 type="text"
                 placeholder={'10'}
                 value={item}
-                onChange={onChangeScooter}
+                onChange={onChangeItem}
             />
 			<Button onClick={onScooterScannerClick}>Scan scooter</Button>
  		   <input
