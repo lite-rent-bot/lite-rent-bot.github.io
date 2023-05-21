@@ -74,19 +74,12 @@ const Form = () => {
 		let num = tg_event.slice(-5).match(/\d+/)[0];
 		//let isnum = /^\d+$/.test(num);
 		if (num.length==4) {
-			setScooter(num);
-			
+			//setScooter(num);
+			setScooter((prevScArray) => [...prevScArray, num]);			
 		} else
-		//const digits_only = string => [...string].every(c => '0123456789'.includes(c));
-		//if (num.every(c => '0123456789'.includes(c))){
-		//	console.log("digits only: true");
-			//console.log("num:"+num);
-			//setScooter((prevScArray) => [...prevScArray, num]);
-		//	setScooter(num);
+			//	setScooter(num);
 			//console.log("scooter:"+JSON.stringify(scooter));
-		//} else {
 			setScooter("ошибка");
-		//	console.log("digits only: false");
 		}		
 		//setScooter(num);
 		return true;		
