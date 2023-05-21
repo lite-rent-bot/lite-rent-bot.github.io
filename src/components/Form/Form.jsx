@@ -64,10 +64,10 @@ const Form = () => {
 	
 	const onChangeScooter = (e) => {
 		console.log("scanned:"+e.target.value);
-		let num = e.target.value.slice(-4);
-		console.log("num:"+num);
-		setScooter((prevScArray) => [...prevScArray, num])
-		console.log("scooter:"+JSON.stringify(scooter));
+		//let num = e.target.value.slice(-4);
+		//console.log("num:"+num);
+		//setScooter((prevScArray) => [...prevScArray, num])
+		//console.log("scooter:"+JSON.stringify(scooter));
 	}
 
     const onChangeSubject = (e) => {
@@ -109,7 +109,6 @@ const Form = () => {
 	}
 
     return (
-	<script> console.log('hello')</script>
 	   <div className={"form"}>
             <h3>Сколько самокатов по документам?</h3>
 		   <input
