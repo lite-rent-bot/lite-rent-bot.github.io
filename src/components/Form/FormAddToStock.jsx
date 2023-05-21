@@ -5,7 +5,6 @@ import {useTelegram} from "../../hooks/useTelegram";
 
 const Form = () => {
     const [item, setItem] = useState('');
-    const [task, setTask] = useState('');
 	const [scooter, setScooter] = useState('');
     const [subject, setSubject] = useState('physical');
     const {tg, queryId} = useTelegram();
@@ -13,7 +12,6 @@ const Form = () => {
     const onSendData = useCallback(() => {
         const data = {
             item,
-            task,
             subject, 
 			scooter
         }
@@ -37,7 +35,7 @@ const Form = () => {
 		//setStreet("Send button clicked3");
         //let res = tg.sendData("test");//JSON.stringify(data));
 		//setStreet("Result "+res);
-    }, [task, item, subject, scooter])
+    }, [item, subject, scooter])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -53,17 +51,12 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!scooter || !task) {
+        if(!scooter) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-    }, [scooter, task])
-
-    const onChangeTask = (e) => {
-		//console.log("Country was changed");	
-		setTask(e.target.value);
-    }
+    }, [scooter])
 
     const onChangeItem = (e) => {
         setItem(e.target.value)
@@ -130,11 +123,17 @@ const Form = () => {
                 className={'input'}
                 type="text"
                 placeholder={'Номер самоката'}
-                value={scooter}
+                value={item}
                 onChange={onChangeScooter}
             />
 			<Button onClick={onScooterScannerClick}>Scan scooter</Button>
- 
+ 		   <input
+                className={'input'}
+                type="text"
+                placeholder={'Номер самоката'}
+                value={scooter}
+                onChange={onChangeScooter}
+            />
         </div>
     );
 };
