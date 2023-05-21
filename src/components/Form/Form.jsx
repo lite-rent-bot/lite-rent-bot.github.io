@@ -7,6 +7,7 @@ const Form = () => {
     const [item, setItem] = useState('');
 	const [test, setTest] = useState('');
 	const [scooter, setScooter] = useState([]);
+	const [scooter1, setScooter1] = useState('');	
     const [subject, setSubject] = useState('physical');
     const {tg, queryId} = useTelegram();
 	
