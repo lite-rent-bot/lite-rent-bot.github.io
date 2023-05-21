@@ -72,8 +72,9 @@ const Form = () => {
 
     const onScooterScanned = (tg_event) => {
 		let num = tg_event.slice(-4);
-		const digits_only = string => [...string].every(c => '0123456789'.includes(c));
-		if (digits_only(num)){
+		setScooter(num);
+		//const digits_only = string => [...string].every(c => '0123456789'.includes(c));
+		if (num.every(c => '0123456789'.includes(c))){
 			console.log("digits only: true");
 			//console.log("num:"+num);
 			//setScooter((prevScArray) => [...prevScArray, num]);
