@@ -76,13 +76,14 @@ const Form = () => {
 		if (digits_only(num)){
 			console.log("digits only: true");
 			//console.log("num:"+num);
-			setScooter((prevScArray) => [...prevScArray, num])
+			//setScooter((prevScArray) => [...prevScArray, num]);
+			setScooter(num);
 			//console.log("scooter:"+JSON.stringify(scooter));
 		} else {
+			setScooter("ошибка");
 			console.log("digits only: false");
-		}
-		
-		setScooter(tg_event);
+		}		
+		//setScooter(num);
 		return true;		
 	}
  	
