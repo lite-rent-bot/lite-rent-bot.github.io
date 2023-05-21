@@ -82,8 +82,7 @@ const Form = () => {
 			setScooter("ошибка");
 		}		
 		//setScooter(num);
-		if (scooter.length==item) {
-		return true};		
+		if (scooter.length.String==item) {	return true};		
 	}
  	
 	const onItemScanned = (tg_event) => {
