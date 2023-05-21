@@ -76,7 +76,7 @@ const Form = () => {
 		if (num.length==4) {
 			//setScooter(num);
 			setScooter((prevScArray) => [...prevScArray, num]);			
-		} else
+		} else {
 			//	setScooter(num);
 			//console.log("scooter:"+JSON.stringify(scooter));
 			setScooter("ошибка");
