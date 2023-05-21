@@ -121,8 +121,8 @@ const Form = () => {
             <h3>Сколько самокатов по документам?</h3>
 		   <input
                 className={'input'}
-                type="text"
-                placeholder={'10'}
+                type="number"
+                placeholder={5}
                 value={item}
                 onChange={onChangeItem}
             />
@@ -137,7 +137,7 @@ const Form = () => {
  		   <input
                 className={'input'}
                 type="text"
-                placeholder={'Номера самокатов'}
+                placeholder={'...'}
                 value={test}
             />			
         </div>
