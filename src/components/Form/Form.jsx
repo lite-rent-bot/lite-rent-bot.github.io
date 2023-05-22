@@ -6,7 +6,7 @@ import {useTelegram} from "../../hooks/useTelegram";
 const Form = () => {
     const [item, setItem] = useState('');
 	const [test, setTest] = useState('');
-	const [scooter, setScooter] = useState('');
+	const [scooter, setScooter] = useState([]);
 	const [scooter1, setScooter1] = useState('');	
     const [subject, setSubject] = useState('physical');
     const {tg, queryId} = useTelegram();
@@ -72,12 +72,12 @@ const Form = () => {
         setSubject(e.target.value)
     }
 
-    const onScooterScanned = (tg_event) => {
+    const async onScooterScanned = (tg_event) => {
 		let num = tg_event.slice(-5).match(/\d+/)[0];
 		//let isnum = /^\d+$/.test(num);
 		if (num.length==4) {
 			//setScooter(num);
-			setScooter(scooter+","+num);			
+			await setScooter((prevScArray) => [...prevScArray, num]);			
 		} else {
 			//	setScooter(num);
 			//console.log("scooter:"+JSON.stringify(scooter));
@@ -132,7 +132,7 @@ const Form = () => {
                 className={'input'}
                 type="text"
                 placeholder={'Номера самокатов'}
-                value={scooter}
+                value={scooter1}
                 onChange={onChangeScooter}
             />
  		   <input
