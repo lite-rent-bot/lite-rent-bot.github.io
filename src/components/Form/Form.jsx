@@ -72,7 +72,7 @@ const Form = () => {
         setSubject(e.target.value)
     }
 
-    const async onScooterScanned = (tg_event) => {
+    const onScooterScanned = async (tg_event) => {
 		let num = tg_event.slice(-5).match(/\d+/)[0];
 		//let isnum = /^\d+$/.test(num);
 		if (num.length==4) {
