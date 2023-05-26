@@ -18,11 +18,10 @@ const Form = () => {
 		//	scooter
         //}
 		let frefix = "/+";
-		if (subject=='outbound')
-			{frefix = "/- "} 
-			else {frefix = "/+ "};
+		if (subject=='outbound') {frefix = "/- ";} 	else {frefix = "/+ ";};
+		let command = frefix+scooter.join(" ");
 		let data = {
-            command: frefix+scooter.join(" ")
+            command
         };
 		
 		//setStreet("Send button clicked1");
@@ -166,10 +165,7 @@ const Form = () => {
            //     placeholder={'...'}
            //     value={test}
             ///>		
-			//<div>
-            //      разделитель
-            //</div>	
-            <h3>Режим сканирования по 1 самокату:</h3>			
+           <h3>Режим сканирования по 1 самокату:</h3>			
  		   <input
                 className={'input'}
                 type="text"
