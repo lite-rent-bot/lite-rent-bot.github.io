@@ -12,11 +12,19 @@ const Form = () => {
     const {tg, queryId} = useTelegram();
 	
     const onSendData = useCallback(() => {
-        const data = {
-            item,
-            subject, 
-			scooter
+        //const data = {
+        //    item,
+        //    subject, 
+		//	scooter
+        //}
+		let frefix = "/+";
+		if (subject=='outbound')
+			{frefix = "/- "} 
+			else {frefix = "/+ "};
+		let data = {
+            command: frefix+scooter.join(" ");
         }
+		
 		//setStreet("Send button clicked1");
 		let article = {
 			type:'article',
@@ -30,7 +38,8 @@ const Form = () => {
 		//setStreet("Send button clicked2");
 		try {
 			//tg.answerWebAppQuery(queryId, JSON.stringify(article));
-			tg.sendData(JSON.stringify(data));
+			//tg.sendData(JSON.stringify(data));
+			tg.sendData(data);
 		} catch (err) {
 			let res = err.message;
 		};
