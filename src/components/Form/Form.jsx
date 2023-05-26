@@ -144,7 +144,7 @@ const Form = () => {
                 value={item}
                 onChange={onChangeItem}
             />
-			<Button onClick={onScooterScannerClick}>Сканировать сразу все</Button>
+			<Button onClick={onScooterScannerClick}>Сканировать сразу все</Button> 
  		   <input
                 className={'input'}
                 type="text"
