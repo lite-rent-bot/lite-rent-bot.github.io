@@ -39,12 +39,6 @@
 	position: absolute;
 	left: 0;
 	bottom: 1px;
-	background: url(/img/radio-1.png) 0 0 no-repeat;
-}
- 
-/* Checked */
-.form_radio input[type=radio]:checked + label:before {
-	background: url(/img/radio-2.png) 0 0 no-repeat;
 }
  
 /* Hover */
