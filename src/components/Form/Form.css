@@ -19,9 +19,7 @@
 .form_radio {
 	margin-bottom: 10px;
 }
-.form_radio input[type=radio] {
-	display: none;
-}
+
 .form_radio label {
 	display: inline-block;
 	cursor: pointer;
