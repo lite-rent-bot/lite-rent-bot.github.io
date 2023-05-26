@@ -23,7 +23,7 @@ const Form = () => {
 			else {frefix = "/+ "};
 		let data = {
             command: frefix+scooter.join(" ")
-        }
+        };
 		
 		//setStreet("Send button clicked1");
 		let article = {
@@ -145,7 +145,8 @@ const Form = () => {
 
     return (
 	   <div className={"form"}>
-            <select value={subject} onChange={onChangeSubject} className={'select'}>
+           <h3>Вид операции</h3>           
+		   <select value={subject} onChange={onChangeSubject} className={'select'}>
                 <option value={'inboud'}>Поступление на склад</option>
                 <option value={'outbound'}>Отгрузка со склада</option>
             </select>
@@ -158,13 +159,7 @@ const Form = () => {
            //     onChange={onChangeItem}
            // />
 			//<Button onClick={onScooterScannerClick}>Сканировать сразу все</Button>
- 		   <input
-                className={'input'}
-                type="text"
-                placeholder={'Номера самокатов'}
-                value={scooter}
-                onChange={onChangeScooter}
-            />
+
  		   //<input
            //     className={'input'}
            //     type="text"
@@ -172,9 +167,16 @@ const Form = () => {
            //     value={test}
             ///>		
 			//<div>
-                  
-            </div>	
+            //      разделитель
+            //</div>	
             <h3>Режим сканирования по 1 самокату:</h3>			
+ 		   <input
+                className={'input'}
+                type="text"
+                placeholder={'Номера самокатов'}
+                value={scooter}
+                onChange={onChangeScooter}
+            />
 			<Button onClick={onScooter1ScannerClick}>Сканировать 1 самокат</Button>			
         </div>
     );
