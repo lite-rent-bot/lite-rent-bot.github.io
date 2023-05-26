@@ -53,7 +53,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(scooter!=[]) {
+        if(scooter==[]) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
@@ -136,7 +136,7 @@ const Form = () => {
 
     return (
 	   <div className={"form"}>
-            <h3>Сколько самокатов по документам?</h3>
+            <h3>Режим массового сканирования:</h3>
 		   <input
                 className={'input'}
                 type="number"
@@ -158,6 +158,10 @@ const Form = () => {
                 placeholder={'...'}
                 value={test}
             />		
+			<div>
+                  
+            </div>	
+            <h3>Режим сканирования по 1 самокату:</h3>			
 			<Button onClick={onScooter1ScannerClick}>Сканировать 1 самокат</Button>			
         </div>
     );
