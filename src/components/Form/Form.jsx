@@ -87,7 +87,21 @@ const Form = () => {
 		setTest("length: "+JSON.stringify(scooter)+", item: "+item);
 		if (scooter.length==item) {	return true};		
 	}
- 	
+	
+    const onScooter1Scanned = async (tg_event) => {
+		let num = tg_event.slice(-5).match(/\d+/)[0];
+		//let isnum = /^\d+$/.test(num);
+		if (num.length==4) {
+			//setScooter(num);
+			await setScooter((prevScArray) => [...prevScArray, num]);			
+		} else {
+			//	setScooter(num);
+			//console.log("scooter:"+JSON.stringify(scooter));
+			setScooter("ошибка");
+		}		
+
+		return true		
+	} 	
 	const onItemScanned = (tg_event) => {
 		setItem(tg_event);
 		return true;		
@@ -116,6 +130,9 @@ const Form = () => {
     const onScooterScannerClick = () => {
 		tg.showScanQrPopup({text: 'Отсканируй самокат'}, onScooterScanned);
 	}
+    const onScooter1ScannerClick = () => {
+		tg.showScanQrPopup({text: 'Отсканируй 1 самокат'}, onScooter1Scanned);
+	}	
 
     return (
 	   <div className={"form"}>
@@ -127,7 +144,7 @@ const Form = () => {
                 value={item}
                 onChange={onChangeItem}
             />
-			<Button onClick={onScooterScannerClick}>Scan scooter</Button>
+			<Button onClick={onScooterScannerClick}>Сканировать сразу все</Button>
  		   <input
                 className={'input'}
                 type="text"
@@ -140,7 +157,8 @@ const Form = () => {
                 type="text"
                 placeholder={'...'}
                 value={test}
-            />			
+            />		
+			<Button onClick={onScooter1ScannerClick}>Сканировать 1 самокат</Button>			
         </div>
     );
 };
