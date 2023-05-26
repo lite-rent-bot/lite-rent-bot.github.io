@@ -27,7 +27,7 @@
 	padding-left: 25px;
 	margin-right: 0;
 	line-height: 18px;
-	user-select: none;
+	/*user-select: none;*/
 }
 .form_radio label:before {
 	content: "";
