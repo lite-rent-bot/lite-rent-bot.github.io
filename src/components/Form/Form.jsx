@@ -22,7 +22,7 @@ const Form = () => {
 			{frefix = "/- "} 
 			else {frefix = "/+ "};
 		let data = {
-            command: frefix+scooter.join(" ");
+            command: frefix+scooter.join(" ")
         }
 		
 		//setStreet("Send button clicked1");
