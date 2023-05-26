@@ -21,7 +21,7 @@ const Form = () => {
 		if (subject=='outbound') {frefix = "/- ";} 	else {frefix = "/+ ";};
 		let command = frefix+scooter.join(" ");
 		let data = {
-            command
+            command: command
         };
 		
 		//setStreet("Send button clicked1");
@@ -37,8 +37,7 @@ const Form = () => {
 		//setStreet("Send button clicked2");
 		try {
 			//tg.answerWebAppQuery(queryId, JSON.stringify(article));
-			//tg.sendData(JSON.stringify(data));
-			tg.sendData(data);
+			tg.sendData(JSON.stringify(data));
 		} catch (err) {
 			let res = err.message;
 		};
