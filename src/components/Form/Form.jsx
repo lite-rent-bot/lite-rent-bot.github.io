@@ -136,15 +136,15 @@ const Form = () => {
 
     return (
 	   <div className={"form"}>
-           // <h3>Сколько самокатов по документам?</h3>
-		   //<input
-           //     className={'input'}
-           //     type="number"
-           //     placeholder={5}
-           //     value={item}
-           //     onChange={onChangeItem}
-           // />
-			//<Button onClick={onScooterScannerClick}>Сканировать сразу все</Button>
+            <h3>Сколько самокатов по документам?</h3>
+		   <input
+                className={'input'}
+                type="number"
+                placeholder={5}
+                value={item}
+                onChange={onChangeItem}
+            />
+			<Button onClick={onScooterScannerClick}>Сканировать сразу все</Button>
  		   <input
                 className={'input'}
                 type="text"
@@ -152,12 +152,12 @@ const Form = () => {
                 value={scooter}
                 onChange={onChangeScooter}
             />
- 		   //<input
-           //     className={'input'}
-           //     type="text"
-           //     placeholder={'...'}
-           //     value={test}
-           // />		
+ 		   <input
+                className={'input'}
+                type="text"
+                placeholder={'...'}
+                value={test}
+            />		
 			<Button onClick={onScooter1ScannerClick}>Сканировать 1 самокат</Button>			
         </div>
     );
