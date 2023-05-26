@@ -144,7 +144,7 @@ const Form = () => {
 
     return (
 	   <div className={"form"}>
-           <h3>Вид операции</h3>           
+           //<h3>Вид операции</h3>           
 		   //<select value={subject} onChange={onChangeSubject} className={'select'}>
            //     <option value={'inboud'}>Поступление на склад</option>
            //     <option value={'outbound'}>Отгрузка со склада</option>
@@ -165,7 +165,7 @@ const Form = () => {
            //     placeholder={'...'}
            //     value={test}
             ///>		
-           <h3>Режим сканирования по 1 самокату:</h3>			
+           //<h3>Режим сканирования по 1 самокату:</h3>			
  		   <input
                 className={'input'}
                 type="text"
