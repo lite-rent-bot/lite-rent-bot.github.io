@@ -17,11 +17,11 @@ const Form = () => {
         //    subject, 
 		//	scooter
         //}
-		let frefix = "/+";
-		if (subject=='outbound') {frefix = "/- ";} 	else {frefix = "/+ ";};
-		let command = frefix+scooter.join(" ");
+		//let frefix = "/+";
+		//if (subject=='outbound') {frefix = "/- ";} 	else {frefix = "/+ ";};
+		//let command = frefix+scooter.join(" ");
 		let data = {
-            command
+            //command
         };
 		
 		//setStreet("Send button clicked1");
