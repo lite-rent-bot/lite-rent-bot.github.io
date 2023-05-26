@@ -144,28 +144,28 @@ const Form = () => {
 
     return (
 	   <div className={"form"}>
-           //<h3>Вид операции</h3>           
-		   //<select value={subject} onChange={onChangeSubject} className={'select'}>
-           //     <option value={'inboud'}>Поступление на склад</option>
-           //     <option value={'outbound'}>Отгрузка со склада</option>
-           //</select>
-           //<h3>Режим массового сканирования:</h3>
-		   //<input
-           //     className={'input'}
-           //     type="number"
-           //     placeholder={5}
-           //     value={item}
-           //     onChange={onChangeItem}
-           // />
-			//<Button onClick={onScooterScannerClick}>Сканировать сразу все</Button>
+           <h3>Вид операции</h3>           
+		   <select value={subject} onChange={onChangeSubject} className={'select'}>
+                <option value={'inboud'}>Поступление на склад</option>
+                <option value={'outbound'}>Отгрузка со склада</option>
+           </select>
+           <h3>Режим массового сканирования:</h3>
+		   <input
+                className={'input'}
+                type="number"
+                placeholder={5}
+                value={item}
+                onChange={onChangeItem}
+            />
+			<Button onClick={onScooterScannerClick}>Сканировать сразу все</Button>
 
- 		   //<input
-           //     className={'input'}
-           //     type="text"
-           //     placeholder={'...'}
-           //     value={test}
-            ///>		
-           //<h3>Режим сканирования по 1 самокату:</h3>			
+ 		   <input
+                className={'input'}
+                type="text"
+                placeholder={'...'}
+                value={test}
+           />		
+           <h3>Режим сканирования по 1 самокату:</h3>			
  		   <input
                 className={'input'}
                 type="text"
