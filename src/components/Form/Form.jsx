@@ -12,11 +12,11 @@ const Form = () => {
     const {tg, queryId} = useTelegram();
 	
     const onSendData = useCallback(() => {
-        const data = {
-            item,
-            subject, 
-			scooter
-        }
+        //const data = {
+        //    item,
+        //    subject, 
+		//	scooter
+        //}
 		let frefix = "/+";
 		if (subject=='outbound') {frefix = "/- ";} 	else {frefix = "/+ ";};
 		let command = frefix+scooter.join(" ");
