@@ -143,11 +143,10 @@ const Form = () => {
 
     return (
 	   <div className={"form"}>
-           <h3>Вид операции</h3>           
-		   <select value={subject} onChange={onChangeSubject} className={'select'}>
-                <option value={'inboud'}>Поступление на склад</option>
-                <option value={'outbound'}>Отгрузка со склада</option>
-           </select>
+           <h3>Вид операции</h3>   
+		  
+		  <input type="radio" name="subject" value="inboud"  onChange={onChangeSubject} />
+		  <input type="radio" name="subject" value="outbound" onChange={onChangeSubject} />		   
     
            <h3>Режим сканирования по 1 самокату:</h3>			
  		   <input
@@ -164,6 +163,10 @@ const Form = () => {
 
 export default Form;
 
+//		   <select value={subject} onChange={onChangeSubject} className={'select'}>
+//                <option value={'inboud'}>Поступление на склад</option>
+//                <option value={'outbound'}>Отгрузка со склада</option>
+//           </select>
 
 //			  <h3>Режим массового сканирования:</h3>
 //			   <input
