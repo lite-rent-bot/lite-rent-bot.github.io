@@ -145,8 +145,8 @@ const Form = () => {
 	   <div className={"form"}>
            <h3>Вид операции</h3>   
 		  
-		  <input type="radio" name="subject" value="inboud"  onChange={onChangeSubject}/> Поступление на склад
-		  <input type="radio" name="subject" value="outbound" onChange={onChangeSubject}/> Отгрузка со склада		   
+		  <input type="radio" name="subject" value="inboud"  onChange={onChangeSubject}/> Поступление 
+		  <input type="radio" name="subject" value="outbound" onChange={onChangeSubject}/> Отгрузка 		   
     
            <h3>Режим сканирования по 1 самокату:</h3>			
  		   <input
