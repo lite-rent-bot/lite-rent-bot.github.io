@@ -146,9 +146,9 @@ const Form = () => {
 			<h3>Вид операции</h3>   
 			<div class="form_radio">		  
 				<input type="radio" name="subject" value="inboud"  onChange={onChangeSubject}/> 
-				<label htmlFor="Поступление">Поступление</label> 
+				<label htmlFor=" Поступление      "> Поступление     </label> 
 				<input type="radio" name="subject" value="outbound" onChange={onChangeSubject}/>
-				<label htmlFor="Отгрузка">Отгрузка</label> 		   		   
+				<label htmlFor=" Отгрузка"> Отгрузка</label> 		   		   
 			</div>
            <h3>Режим сканирования по 1 самокату:</h3>			
  		   <input
