@@ -25,7 +25,8 @@ body {
 }
 
 .l-radio-button {
-  width: 30px;    
+  width: 30px; 
+  display: inline;  
 }
 .l-radio {
   width: 250px;
