@@ -24,8 +24,11 @@ body {
     margin-top: 15px;
 }
 
+.l-radio-button {
+  width: 30px;    
+}
 .l-radio {
-  width: 50px;
+  width: 250px;
   padding: 6px;
   border-radius: 50px;
   display: inline-flex;
