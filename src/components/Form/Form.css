@@ -25,6 +25,7 @@ body {
 }
 
 .l-radio {
+  width: 50px
   padding: 6px;
   border-radius: 50px;
   display: inline-flex;
