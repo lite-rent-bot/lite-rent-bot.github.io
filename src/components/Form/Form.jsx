@@ -144,12 +144,12 @@ const Form = () => {
     return (
 	   <div className={"form"}>
 			<h3>Вид операции</h3>   
-			<div class="l-radio">		  
-				<label for="radio"> 
+			<div>		  
+				<label for="radio" class="l-radio"> 
 					<input type="radio" name="subject" value="inboud" id="inbound" tabindex="1" onChange={onChangeSubject}/> 
 					<span>Поступление     </span>
 				</label> 
-				<label for="radio"> 
+				<label for="radio" class="l-radio"> 
 					<input type="radio" name="subject" value="outbound" id="outbound" tabindex="2"  onChange={onChangeSubject}/>
 					<span> Отгрузка</span>
 				</label> 		   		   
