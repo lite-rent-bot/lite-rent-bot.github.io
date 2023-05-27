@@ -156,7 +156,7 @@ const Form = () => {
 			</div>
            <h3>Режим сканирования по 1 самокату:</h3>			
  		   <input
-                className={'input'}
+                class="simplebutton"
                 type="text"
                 placeholder={'Номера самокатов'}
                 value={scooter}
@@ -168,6 +168,8 @@ const Form = () => {
 };
 
 export default Form;
+
+//				className={'input'}
 
 //		   <select value={subject} onChange={onChangeSubject} className={'select'}>
 //                <option value={'inboud'}>Поступление на склад</option>
