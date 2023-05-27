@@ -1,17 +1,17 @@
-.form {
+.form1 {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 20px;
 }
 
-.simplebutton {
+.simplebutton1 {
     width: 100%;
     padding: 10px;
     margin-top: 15px;
 }
 
-.select {
+.select1 {
     padding: 10px;
     margin-top: 15px;
 }
@@ -26,9 +26,10 @@
   -webkit-tap-highlight-color: transparent;
     
 }
-.l-radio:hover, .l-radio:focus-within {
+.l-radio:hover{
   background: rgba(159, 159, 159, 0.1);
 }
+
 .l-radio input {
   vertical-align: middle;
   width: 20px;
