@@ -9,7 +9,7 @@ body {
   font-family: sans-serif;
 }
 
-.* {
+.asterisk {
   box-sizing: border-box;
 }
 
@@ -19,20 +19,20 @@ body {
     margin-top: 15px;
 }
 
-.select {
+.select1 {
     padding: 10px;
     margin-top: 15px;
 }
 
 .l-radio-button {
   width: 30px; 
-  display: inline;  
+  display: inline-block;  
 }
 .l-radio {
   width: 250px;
   padding: 6px;
   border-radius: 50px;
-  display: inline;
+  display: inline-block;
   cursor: pointer;
   transition: background 0.2s ease;
   margin: 8px 0;
