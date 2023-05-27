@@ -31,6 +31,7 @@ body {
   width: 250px;
   padding: 6px;
   border-radius: 50px;
+  display: inline;
   cursor: pointer;
   transition: background 0.2s ease;
   margin: 8px 0;
@@ -64,7 +65,7 @@ body {
 }
 .l-radio span {
   vertical-align: middle;
-  display: inline-block;
+  display: inline;
   line-height: 20px;
   padding: 0 8px;
 }
