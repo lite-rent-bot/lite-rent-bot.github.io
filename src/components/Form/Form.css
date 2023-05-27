@@ -9,7 +9,7 @@ body {
   font-family: sans-serif;
 }
 
-* {
+.test {
   box-sizing: border-box;
 }
 
