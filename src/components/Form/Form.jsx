@@ -145,10 +145,8 @@ const Form = () => {
 	   <div className={"form"}>
 			<h3>Вид операции</h3>   
 			<div>
-			<input type="radio" class="l-radio-button" name="subject" value="inboud" id="inbound" tabindex="1" onChange={onChangeSubject}
+			<input type="radio" class="l-radio-button" name="subject" value="inboud" id="inbound" tabindex="1" onChange={onChangeSubject}> 
 			<label for="inbound" class="l-radio">Поступление</label> 
-			/> 
-			
 			</div>
 			
 			<div>
