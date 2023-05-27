@@ -1,23 +1,31 @@
-.form1 {
+.form {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 20px;
 }
 
-.simplebutton1 {
+body {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.simplebutton {
     width: 100%;
     padding: 10px;
     margin-top: 15px;
 }
 
-.select1 {
+.select {
     padding: 10px;
     margin-top: 15px;
 }
 
 .l-radio {
- padding: 6px;
+  padding: 6px;
   border-radius: 50px;
   display: inline-flex;
   cursor: pointer;
