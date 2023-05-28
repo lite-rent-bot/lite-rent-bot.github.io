@@ -60,7 +60,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(scooter.length=0) {
+        if(scooter.length==0) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
