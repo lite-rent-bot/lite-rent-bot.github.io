@@ -60,12 +60,12 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(scooter.length==0) {
+        if(!subject && scooter.length==0) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-    }, [scooter])
+    }, [scooter,subject])
 
     const onChangeItem = (e) => {
         setItem(e.target.value)
