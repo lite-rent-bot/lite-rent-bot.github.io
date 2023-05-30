@@ -144,6 +144,9 @@ const Form = () => {
     return (
 	   <div className={"form"}>
 			<h3>Тест интеграции с гугл-формами</h3>   
+			
+			<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc3Gn5z8Vb6X_fKhGBa27dcatmFq_2lMj5EL_xW3HRhxhHXxQ/viewform?embedded=true" width="640" height="762" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+			
 			<div>
 			<input type="radio" class="l-radio-button" name="subject" value="inboud" id="inbound1" tabindex="1" onChange={onChangeSubject} /> 
 			<label for="inbound1" class="l-radio">Поступление</label> 
