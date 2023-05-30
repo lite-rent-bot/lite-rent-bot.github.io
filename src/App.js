@@ -20,6 +20,7 @@ function App() {
             <Routes>
                 <Route index element={<ProductList />}/>
                 <Route path={'form'} element={<Form />}/>
+				<Route path={'form2'} element={<Form2 />}/>
             </Routes>
         </div>
     );
