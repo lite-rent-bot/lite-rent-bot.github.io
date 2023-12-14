@@ -104,7 +104,8 @@ const Form = () => {
 		} else {
 			//	setScooter(num);
 			//console.log("scooter:"+JSON.stringify(scooter));
-			setScooter("ошибка");
+			setScooter(JSON.stringify(tg_event));
+			//setScooter("ошибка");
 		}		
 
 		return true		
