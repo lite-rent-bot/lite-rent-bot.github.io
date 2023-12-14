@@ -98,13 +98,13 @@ const Form = () => {
     const onScooter1Scanned = async (tg_event) => {
 		let num = tg_event.slice(-5).match(/\d+/)[0];
 		//let isnum = /^\d+$/.test(num);
-		if (num.length==4) {
+		if (num.length==4||num.length==5) {
 			//setScooter(num);
 			await setScooter((prevScArray) => [...prevScArray, num]);			
 		} else {
 			//	setScooter(num);
 			//console.log("scooter:"+JSON.stringify(scooter));
-			setScooter("ошибка4");
+			setScooter("ошибка4:"+JSON.stringify(tg_event));
 		}		
 
 		return true		
