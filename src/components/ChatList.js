@@ -14,7 +14,7 @@ const ChatList = ({ onSelectChat }) => {
       <ul>
         {chats.map(chat => (
           <li key={chat.id}>
-            <button onClick={() => onSelectChat(chat.id)}>
+            <button  id="send-button" onClick={() => onSelectChat(chat.id)}>
               {chat.name}
             </button>
           </li>

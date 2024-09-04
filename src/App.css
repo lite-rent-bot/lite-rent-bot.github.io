@@ -8,3 +8,17 @@ body {
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }
+
+#send-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0088cc;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #0077bb;
+}
