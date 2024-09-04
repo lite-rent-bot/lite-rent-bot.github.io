@@ -9,8 +9,8 @@ import Header from "./components/Header/Header";
 //import ProductList from "./components/ProductList/ProductList";
 import Form from "./components/Form/Form";
 //import Form2 from "./components/Form/Form2";
-import ChatList from './ChatList';
-import ChatMessages from './ChatMessages';
+import ChatList from './components/ChatList';
+import ChatMessages from './components/ChatMessages';
 
 
 function App() {
