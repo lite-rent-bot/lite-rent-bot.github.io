@@ -9,20 +9,24 @@ const chats = [
 
 const ChatList = ({ onSelectChat }) => {
   return (
-    <div>
-	<div class="sidebar-header">
-      <h1>Chat List</h1>
-	  </div>
-      <ul  class="contacts">
-        {chats.map(chat => (
-          <li key={chat.id}>
-            <button  onClick={() => onSelectChat(chat.id)}>
-              {chat.name}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <div class="container">
+	<div class="sidebar">
+		<div class="sidebar-header">
+		  <h1>Chat List</h1>
+		  </div>
+			  <ul  class="contacts">
+				{chats.map(chat => (
+				  <li key={chat.id}>
+					<button  onClick={() => onSelectChat(chat.id)}>
+					  {chat.name}
+					</button>
+				  </li>
+				))}
+			  </ul>
+		   </div>
+	   </div>
+	</div>
+	</div>
   );
 };
 
