@@ -4,10 +4,54 @@
   box-sizing: border-box;
 }
 
+
 body {
-  background: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+	background: var(--tg-theme-bg-color);
+	color: var(--tg-theme-text-color);
 }
+
+.container {
+    display: flex;
+    width: 90%;
+    height: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #2a2f32;
+    color: white;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contacts {
+    list-style: none;
+    padding: 20px;
+}
+
+.contact {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.contact:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 
 #send-button {
     margin-left: 10px;
