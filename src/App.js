@@ -9,64 +9,34 @@ import Header from "./components/Header/Header";
 //import ProductList from "./components/ProductList/ProductList";
 import Form from "./components/Form/Form";
 //import Form2 from "./components/Form/Form2";
-//import ChatList from './components/ChatList';
-//import MessageList from './components/MessageList';
+import ChatList from './ChatList';
+import ChatMessages from './ChatMessages';
 
-const chats = [
-  { id: 1, name: "Chat 1", messages: ["Hello from Chat 1", "How are you?"] },
-  { id: 2, name: "Chat 2", messages: ["Welcome to Chat 2", "What's up?"] },
-  { id: 3, name: "Chat 3", messages: ["Chat 3 is here!", "Let's talk!"] },
-];
-
-const ChatList = () => {
-  return (
-    <div>
-      <h1>Chat List</h1>
-      <ul>
-        {chats.map(chat => (
-          <li key={chat.id}>
-            <Link to={`/chat/${chat.id}`}>{chat.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-const ChatMessages = ({ chat }) => {
-  const navigate = useNavigate();
-
-  return (
-    <div>
-      <h1>{chat.name}</h1>
-      <button onClick={() => navigate('/')}>Back to Chat List</button>
-      <ul>
-        {chat.messages.map((message, index) => (
-          <li key={index}>{message}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-const Chat = ({ id }) => {
-  const chat = chats.find(chat => chat.id === parseInt(id));
-  return chat ? <ChatMessages chat={chat} /> : <div>Chat not found</div>;
-};
 
 function App() {
     const {onToggleButton, tg} = useTelegram();
+  const [selectedChatId, setSelectedChatId] = useState(null);
+
+  const handleSelectChat = (id) => {
+    setSelectedChatId(id);
+  };
+
+  const handleBack = () => {
+    setSelectedChatId(null);
+  };
+  
     useEffect(() => {
         tg.ready();
     }, [])
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<ChatList />} />
-        <Route path="/chat/:id" element={<ChatMessagesWrapper />} />
-      </Routes>
-    </Router>
+    <div>
+      {selectedChatId === null ? (
+        <ChatList onSelectChat={handleSelectChat} />
+      ) : (
+        <ChatMessages chatId={selectedChatId} onBack={handleBack} />
+      )}
+    </div>
   );
  //   return (
  //       <div className="App">

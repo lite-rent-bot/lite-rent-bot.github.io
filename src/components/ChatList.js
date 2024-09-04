@@ -1,14 +1,22 @@
-// src/ChatList.js
+// src/components/ChatList.js
 import React from 'react';
 
-const ChatList = ({ chats, onSelectChat }) => {
+const chats = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' },
+  { id: 3, name: 'Charlie' }
+];
+
+const ChatList = ({ onSelectChat }) => {
   return (
     <div>
-      <h2>Chats</h2>
+      <h1>Chat List</h1>
       <ul>
-        {chats.map((chat) => (
-          <li key={chat.id} onClick={() => onSelectChat(chat)}>
-            {chat.name}
+        {chats.map(chat => (
+          <li key={chat.id}>
+            <button onClick={() => onSelectChat(chat.id)}>
+              {chat.name}
+            </button>
           </li>
         ))}
       </ul>
