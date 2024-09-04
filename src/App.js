@@ -56,24 +56,6 @@ const Chat = ({ id }) => {
 
 function App() {
     const {onToggleButton, tg} = useTelegram();
-	const [selectedChat, setSelectedChat] = useState(null);
-
-	const chats = [
-		{ id: 1, name: 'Chat A' },
-		{ id: 2, name: 'Chat B' },
-		{ id: 3, name: 'Chat C' },
-	  ];
-
-	const messages = {
-		1: ['Hello from A!', 'How are you?'],
-		2: ['Hello from B!', 'What’s up?'],
-		3: ['Hello from C!', 'Good to see you!'],
-	  };
-
-	const handleSelectChat = (chat) => {
-		setSelectedChat(chat);
-	  };
-
     useEffect(() => {
         tg.ready();
     }, [])
