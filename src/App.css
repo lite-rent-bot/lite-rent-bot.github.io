@@ -17,7 +17,7 @@ body {
     margin: 0;
 }
 
-..chat-list {
+.chat-list {
     width: 300px;
     background: white;
     border-radius: 8px;
