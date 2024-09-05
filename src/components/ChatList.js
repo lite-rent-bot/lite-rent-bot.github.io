@@ -20,7 +20,6 @@ const ChatList = ({ onSelectChat }) => {
 						  {chat.name}
 						</button>
 					</div>
-					<div class="chat-preview">Начало последнего сообщения...</div>
 			))}
 		</div>
 	</div>
