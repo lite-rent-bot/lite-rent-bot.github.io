@@ -15,7 +15,6 @@ const ChatList = ({ onSelectChat }) => {
 		</div>
 		<div  class="chat-item">
 			{chats.map(chat => (
-				<div class="avatar">А</div>
 				<div class="chat-name">
 					<li key={chat.id}>
 						<button  onClick={() => onSelectChat(chat.id)}>
