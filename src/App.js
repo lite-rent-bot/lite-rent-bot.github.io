@@ -24,7 +24,7 @@ function App() {
   const handleBack = () => {
     setSelectedChatId(null);
   };
-  
+   
     useEffect(() => {
         tg.ready();
     }, [])
