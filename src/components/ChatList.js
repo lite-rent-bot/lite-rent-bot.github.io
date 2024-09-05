@@ -9,21 +9,24 @@ const chats = [
 
 const ChatList = ({ onSelectChat }) => {
   return (
-    <div class="container">
-	<div class="sidebar">
-		<div class="sidebar-header">
-			<h1>Chat List</h1>
+    <div class="chat-list">
+		<div class="chat-list-header">
+			<h1>Список чатов</h1>
 		</div>
+        <div class="chat-item">
 		<ul  class="contacts">
 			{chats.map(chat => (
-			  <li key={chat.id}>
-				<button  onClick={() => onSelectChat(chat.id)}>
-				  {chat.name}
-				</button>
-			  </li>
+				<div class="avatar">A</div>
+				<div class="chat-name">
+					<li key={chat.id}>
+						<button  onClick={() => onSelectChat(chat.id)}>
+						  {chat.name}
+						</button>
+					</li>
+					<div class="chat-preview">Hey, are we still on for tonight?</div>
+				</div>
 			))}
 		</ul>
-	</div>
 	</div>
   );
 };
