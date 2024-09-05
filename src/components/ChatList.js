@@ -15,14 +15,12 @@ const ChatList = ({ onSelectChat }) => {
 		</div>
 		<div  class="chat-item">
 			{chats.map(chat => (
-				<div class="chat-name">
-					<li key={chat.id}>
+					<div class="chat-name" key={chat.id}>
 						<button  onClick={() => onSelectChat(chat.id)}>
 						  {chat.name}
 						</button>
-					</li>
+					</div>
 					<div class="chat-preview">Начало последнего сообщения...</div>
-				</div>
 			))}
 		</div>
 	</div>
