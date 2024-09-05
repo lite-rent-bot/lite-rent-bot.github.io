@@ -26,7 +26,7 @@ body {
 }
 
 .sidebar {
-    width: 25%;
+    width: 100%;
     background-color: #2a2f32;
     color: white;
     overflow-y: auto;
