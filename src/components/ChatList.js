@@ -13,8 +13,7 @@ const ChatList = ({ onSelectChat }) => {
 		<div class="chat-list-header">
 			<h1>Список чатов</h1>
 		</div>
-        <div class="chat-item">
-		<ul  class="contacts">
+		<div  class="chat-item">
 			{chats.map(chat => (
 				<div class="avatar">A</div>
 				<div class="chat-name">
@@ -26,7 +25,7 @@ const ChatList = ({ onSelectChat }) => {
 					<div class="chat-preview">Hey, are we still on for tonight?</div>
 				</div>
 			))}
-		</ul>
+		</div>
 	</div>
   );
 };
